@@ -1,0 +1,260 @@
+/* Styling untuk navigasi */
+.navigasi {
+    background-color: #7e1c1a;
+    margin-top: -2%;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    text-align: right;
+}
+
+li {
+    display: inline-block;
+    padding-left: 5%;
+    padding-bottom: 2%;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+a:hover {
+    color: #827d97;
+}
+
+/* Styling untuk gambar profile */
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.logo-profile {
+    width: 8%;
+    margin-top: 6%;
+    margin-right: 2%;
+    cursor: pointer; /* Menambahkan pointer agar terlihat seperti elemen interaktif */
+}
+
+/* Dropdown menu untuk opsi profile */
+.profile-options {
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    display: none;
+    position: absolute;
+    top: 100%; /* Menempatkan menu di bawah gambar */
+    right: 0;
+    background-color: #c06464;
+    border: 1px solid #ccc;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 150px;
+    z-index: 10;
+}
+
+.profile-option {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.profile-option:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling untuk opening section */
+.opening {
+    background-color: #B22222;
+    margin-top: -2%;
+    height: 667px;
+    padding-bottom: 5%;
+}
+
+.gambar-opening {
+    width: 40%;
+    margin-left: 58%;
+    margin-top: 5%;
+}
+
+.welcome-text {
+    color: white;
+    margin-top: -40%;
+    margin-left: 10%;
+    font-size: 50px;
+}
+
+.font {
+    width: 30%;
+    margin-left: 15%;
+}
+
+.deskripsi {
+    color: white;
+    margin-left: 10%;
+    margin-top: 20%;
+    font-size: 100%;
+}
+
+/*fitur*/
+.fitur {
+    padding-bottom: 5%;
+}
+
+.fitur-task {
+    background-color: #E3AEAE;
+    width: 15%;
+    border-radius: 10%;
+    margin-left: 25%;
+    margin-top: 10%;
+    padding: 1%;
+}
+
+.fitur-task:hover {
+    box-shadow: 0 0 10px #1B0E4D;
+}
+
+.logo-task {
+    width: 28%;
+    margin-left: 32%;
+}
+
+.my-task {
+    color: #1B0E4D;
+    text-align: center;
+}
+
+.fitur-calender {
+    background-color: #E3AEAE;
+    width: 15%;
+    border-radius: 10%;
+    margin-left: 60%;
+    margin-top: -13%;
+    padding: 1%;
+}
+
+.fitur-calender:hover {
+    box-shadow: 0 0 10px #1B0E4D;
+}
+
+.logo-calender {
+    width: 28%;
+    margin-left: 32%;
+}
+
+.task-calender {
+    color: #1B0E4D;
+    text-align: center;
+}
+
+.fitur-budget {
+    background-color: #d3cdea;
+    width: 15%;
+    border-radius: 10%;
+    margin-left: 42.5%;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+.fitur-budget:hover {
+    box-shadow: 0 0 10px #1B0E4D;
+}
+
+.logo-budget {
+    width: 28%;
+    margin-left: 35%;
+}
+
+.budget-planner {
+    color: #1B0E4D;
+    text-align: center;
+}
+
+.garis {
+    margin-top: 9%;
+    width: 100%;
+}
+
+.garis-2 {
+    width: 100%;
+}
+
+.service1 {
+    color: #1B0E4D;
+}
+
+.service2 {
+    color: #1B0E4D;
+}
+
+.foto-service1 {
+    width: 25%;
+    margin-left: 15%;
+    margin-top: 10%;
+}
+
+.judul-service1 {
+    margin-left: 50%;
+    margin-top: -20%;
+}
+
+.deskripsi-service1 {
+    margin-left: 50%;
+    width: 40%;
+}
+
+.foto-service2 {
+    width: 25%;
+    margin-top: 20%;
+    margin-left: 65%;
+}
+
+.judul-service2 {
+    margin-top: -20%;
+    margin-left: 17%;
+}
+
+.deskripsi-service2 {
+    width: 40%;
+    margin-left: 17%;
+}
+
+.foto-copyright {
+    width: 3%;
+    margin-left: 46%;
+    margin-top: 2.7%;
+}
+
+.low-teks-first {
+    margin-left: 50%;
+    color: white;
+    margin-top: -3%;
+}
+
+.low-teks-first:hover {
+    color: #827d97;
+}
+
+.footer {
+    background-color: #B22222;
+    width: 90%;
+    padding: 5%;
+    margin-top: 10%;
+    bottom: 0;
+}
+
+.copyright {
+    margin-left: 45%;
+}
+
+.cr-teks {
+    color: white;
+    display: inline-block;
+}
+
+.foto-copyright {
+    width: 1%;
+}
