@@ -1,0 +1,38 @@
+
+body {
+    min-height: 100vh; 
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black; 
+    background-image: url('/images2/background-login.png'); 
+    background-size: cover;
+    background-position: center; 
+}
+
+.login-form {
+    background-color: #B22222;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 24px; 
+    height:550px;
+    width: 100%;
+    max-width: 550px;
+    color: #ffffff;
+}
+
+.forgot-password {
+    font-size: 0.875rem;
+    text-decoration: underline; 
+    margin-right: auto; 
+    transition: color 0.3s; 
+}
+
+.tombol{
+    text-align: center;
+}
+
+.forgot-password:hover {
+    color: #2d3748; 
+}

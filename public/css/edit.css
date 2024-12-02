@@ -1,0 +1,171 @@
+body {
+    font-family: 'Poppins';
+    margin: 0px;
+    padding: 0px;
+    background-color: #ffffff;
+}
+
+.my-task {
+    background-color: #701414;
+    margin-top: -2%;
+    padding: 1px;
+    width: 95vh;
+    margin: auto;
+    border-radius: 1vh;
+}
+
+.back-text{
+    color: #B22222;
+    margin-left: 12%;
+    display: flex;
+    margin-top: -4.8%;
+    font-size: 3.5vh;
+}
+.back{
+    margin-left: 5%;
+    margin-top: -3%;
+}
+.back-text:hover{
+    color: gray;
+}
+
+.foto {
+    margin-left: 35%;
+    margin-top: 3%;
+    width: 5%;
+}
+
+.teks {
+    color: #ffffff;
+    margin-left: 45%;
+    margin-top: -6%;
+    font-size: 45px;
+    font-family: monospace;
+    padding-inline: 0px;
+}
+
+.logo {
+    margin-left: 85%;
+    width: 7%;
+    margin-top: -6%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.file {
+    display: block;
+    margin-left: 1.5%;
+    margin-top: 10%;
+    background-color: #D3CDEA;
+}
+
+.fitur {
+    margin-top: 150px;
+    margin-left: auto; /* Untuk memusatkan elemen */
+    margin-right: auto; /* Untuk memusatkan elemen */
+    width: 50%; /* Mengatur lebar fitur agar tidak terlalu lebar */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Memusatkan form input */
+}
+
+.fitur input {
+    color: 1px solid black;
+    margin-top: 23px;
+    text-align: center;
+    width: 100%; /* Menggunakan 100% untuk responsivitas */
+    height: 70px;
+    background-color: #E3AEAE;
+    border: 3px solid #701414;
+    color: #1B0E4D;
+    border-radius: 10px;
+}
+
+textarea.isi {
+    color: 1px solid black;
+    margin-top: 23px;
+    width: 100%; /* Menggunakan 100% untuk responsivitas */
+    height: 400px;
+    background-color: #E3AEAE;
+    border: 3px solid #701414;
+    color: #1B0E4D;
+    border-radius: 10px;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #ffffff;
+    border: 1px solid #1B0E4D;
+}
+
+footer {
+    margin-top: 8px;
+    color: #7e1c1a;
+    display: flex;
+    justify-content: flex-end; 
+    padding-right: 10%; 
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .my-task {
+        width: 90vh; /* Mengurangi lebar untuk layar yang lebih kecil */
+    }
+
+    .teks {
+        font-size: 40px; /* Mengurangi ukuran font untuk layar yang lebih kecil */
+        margin-left: 40%; /* Mengubah posisi teks untuk layar yang lebih kecil */
+    }
+
+    .fitur {
+        margin-top: 100px; /* Mengurangi margin atas untuk layar yang lebih kecil */
+        width: 80%; /* Lebar fitur lebih kecil untuk layar yang lebih kecil */
+    }
+
+    .teks {
+        display: none; 
+    }
+
+    .back-text {
+        display: none; 
+    }
+}
+
+@media (max-width: 768px) {
+    .teks {
+        font-size: 30px; /* Ukuran font yang lebih kecil untuk layar kecil */
+        margin-left: 30%; /* Mengubah posisi teks untuk layar kecil */
+    }
+
+    .fitur {
+        margin-top: 50px; /* Mengurangi margin atas untuk layar kecil */
+        width: 90%; /* Lebar fitur lebih kecil untuk layar kecil */
+    }
+
+    .teks {
+        display: none; 
+    }
+
+    .back-text {
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    .teks {
+        font-size: 25px; /* Ukuran font yang lebih kecil untuk layar sangat kecil */
+    }
+
+    .teks {
+        display: none; 
+    }
+
+    .back-text {
+        display: none; 
+    }
+}

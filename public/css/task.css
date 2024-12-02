@@ -1,81 +1,158 @@
-body{
-    font-family: verdana;
-    margin: 0px;
-    padding: 0px;
-    background-color: #1B0E4D;
+body {
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    background-color: #B22222;
 }
-.my-task{
-    background-color: #D3CDEA;
+
+.my-task {
+    background-color: #701414;
     margin-top: -2%;
     padding: 1px;
-    width: 50%;
+    width: 95vh;
     margin: auto;
-    border-radius: 1%;
+    border-radius: 2vh;
 }
-.foto{
+
+.foto {
     margin-left: 35%;
     margin-top: 5%;
     width: 7%;
 }
-.teks{
-    color:#1B0E4D;
+
+.teks {
+    color: #ffffff;
     margin-left: 45%;
     margin-top: -7%;
+    font-size: 45px;
+    font-family: monospace;
+    padding-inline: 3px;
 }
-.logo{
-    margin-left: 85%;
-    width: 7%;
-    margin-top: -6%;
-    display: block;
-}
-a{
+
+a {
     text-decoration: none;
 }
-.back-image{
-    width: 2%;
-    margin-left: 5%;
+
+.back-text {
+    color: #ffffff;
+    margin-left: 12%;
+    display: flex;
+    margin-top: -4.8%;
+    font-size: 3.5vh;
 }
-.back-text{
-    color: #D3CDEA;
-    margin-left: 8%;
-    display: block;
-    margin-top: -2.8%;
-}
-.back{
+
+.back {
     margin-left: 5%;
     margin-top: -3%;
 }
-.back-text:hover{
+
+.back-text:hover {
     color: gray;
 }
-.file{
-    display: block;
-    margin-left: 1.5%;
-    margin-top: 10%;
-    background-color: #D3CDEA;
-}
+
 .fitur {
-    margin-top: 100px;
+    margin-top: 250px;
     text-align: center;
-    margin-left: 35%;
-    
+    margin-left: 450px;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
 }
+
 .fitur input {
     color: 1px solid black;
     margin-top: 23px;
     text-align: center;
-    width: 400px;
-    height: 40px;
-    background-color: #D3CDEA;
+    width: 795px;
+    height: 70px;
+    background-color: #ffffff;
     border: 1px solid #1B0E4D;
     color: #1B0E4D;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
 input[type="file"]::file-selector-button {
-    background-color: #D3CDEA;
+    background-color: #ffffff;
     border: 1px solid #1B0E4D;
+}
+
+.ceklis {
+    bottom: 1rem;
+    right: 1rem;
+    position: absolute;
+}
+
+@media (max-width: 768px) {
+    .my-task {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .foto {
+        width: 15%;
+        margin-left: 40%;
+    }
+
+    .teks {
+        font-size: 30px;
+        margin-left: 35%;
+    }
+
+    .back-text {
+        font-size: 4vh;
+        margin-left: 10%;
+    }
+
+    .fitur {
+        margin-left: 5%;
+        margin-top: 150px;
+    }
+
+    .fitur input {
+        width: 90%;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .ceklis {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .teks {
+        display: none; 
+    }
+
+    .back-text {
+        display: none; 
+    }
+}
+
+@media (max-width: 480px) {
+    .teks {
+        font-size: 24px;
+    }
+
+    .back-text {
+        font-size: 3vh;
+    }
+
+    .fitur {
+        margin-top: 100px;
+    }
+
+    .fitur input {
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .teks {
+        display: none; 
+    }
+
+    .back-text {
+        display: none; 
+    }
 }

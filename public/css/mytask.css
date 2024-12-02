@@ -1,66 +1,97 @@
-body{
+body {
     font-family: verdana;
     margin-top: 0;
     padding: 0px;
 }
-.container{
-    background-color: #B22222;
+.container {
+    background-color: #b22222;
+    background: repeating-linear-gradient();
     margin-top: -2%;
     padding: 1.5%;
 }
-ul{
+ul {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    /* margin-left: 77%; */
     margin-top: 3%;
 }
-li{
-
+li {
 }
-a{
+a {
     text-decoration: none;
-    color: #FFF;
+    color: #fff;
     font-weight: bolder;
     font-size: 150%;
 }
-a:hover{
+a:hover {
     color: rgb(102, 102, 124);
 }
-.gambar-back{
+.gambar-back {
     width: 7%;
     margin-left: -460%;
 }
 
-.box-task{
-    background-color: #B22222;
+.box-task {
+    background-color: #b22222;
     padding-bottom: 10%;
     height: 700px;
 }
-.note-text-1{
+.note-text-1 {
     display: block;
     width: 22%;
-    color: #FFFF;
+    color: #ffff;
     font-size: 300%;
     margin-top: -19%;
     text-align: center;
 }
-.gambar-plus{
+.gambar-plus {
     width: 5%;
     margin-left: -23%;
     margin-bottom: -18%;
-    
 }
-.note-text-1{
+.note-text-1 {
     margin-left: 50%;
-    
 }
-.deskripsi-plus{
+.deskripsi-plus {
     color: #d3cdea;
     margin-left: 13%;
     margin-top: 27%;
     font-weight: bolder;
 }
-.deskripsi-plus:hover{
+.deskripsi-plus:hover {
     color: gray;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2%;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gambar-back,
+    .gambar-plus {
+        width: 20%;
+        max-width: 80px;
+    }
+
+    .note-text-1 {
+        font-size: 1.5em;
+    }
+
+    .deskripsi-plus {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    a {
+        font-size: 1.2em;
+    }
+    .note-text-1 {
+        font-size: 1.2em;
+    }
 }

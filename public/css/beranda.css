@@ -168,7 +168,7 @@ nav ul li a {
     color: #797979;
 }
 
-/*--features--*/
+
 .features {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -275,7 +275,7 @@ nav ul li a {
     padding: 18px 0;
 }
 
-/*----footer----*/
+
 #footer {
     padding: 50px 0 30px;
 }
@@ -283,7 +283,6 @@ nav ul li a {
 hr {
     width: 100%;
     border: 0;
-    /* border-top: 1px solid #3572ef; */
     border-top: #B22222;
 }
 
@@ -438,6 +437,7 @@ hr {
     .footer-right-col {
         flex-basis: 100%;
     }
+
 
     .link-title {
         flex-basis: 50%;

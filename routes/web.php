@@ -30,6 +30,18 @@ Route::get('/task', function () {
     return view('admin/task');
 });
 
+Route::get('/list', function () {
+    return view('admin/list');
+});
+
+Route::get('/edit', function () {
+    return view('admin/edit');
+});
+
+Route::get('/Forgot your password?', function () {
+    return view('resetPw');
+});
+
 Route::get('/setting', function () {
     return view('admin/setting');
 });
