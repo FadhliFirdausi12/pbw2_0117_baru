@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('landingPage');
 });
@@ -21,6 +22,9 @@ Route::get('/logout', [AuthenticatedSessionController::class, 'destroy']);
 Route::get('/admin', function () {
     return view('admin/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/task', [TaskController::class, 'index'])->name('task');
+
 
 Route::get('/mytask', function () {
     return view('admin/mytask');

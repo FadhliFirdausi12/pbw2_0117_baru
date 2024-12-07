@@ -32,7 +32,7 @@
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
+                <input id="remember_me" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-red-600 shadow-sm focus:ring-red-500 dark:focus:ring-red-700 dark:focus:ring-offset-gray-800" name="remember">
                     <span class="ms-2 text-sm text-white-600 dark:text-gray-400">{{ __('Remember me') }}</span>
                 </label>
             </div>
@@ -45,9 +45,9 @@
             dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs
             text-white
             dark:text-gray-800 uppercase tracking-widest
-            hover:bg-gray-700
+            hover:ring-red-500
             dark:hover:bg-white
-            focus:bg-gray-700
+            focus:ring-red-500
             dark:focus:bg-white
             active:bg-gray-900
             dark:active:bg-gray-300 focus:outline-none focus:ring-2

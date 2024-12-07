@@ -14,7 +14,7 @@ body {
 .login-form {
     background-color: #B22222;
     border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(251, 65, 65, 0.1);
     padding: 24px; 
     height:550px;
     width: 100%;
@@ -31,8 +31,9 @@ body {
 
 .tombol{
     text-align: center;
+    border-radius: 100px;
 }
 
 .forgot-password:hover {
-    color: #2d3748; 
+    color: #fb700c; 
 }

@@ -17,7 +17,7 @@
             <li class="profile-menu">
                 <img class="logo-profile" src="./images2/profile-logo.png" alt="Profile Photo" id="profile-photo">
                 <div class="profile-options" id="profile-options">
-                    <a href="#" class="profile-option">Edit Profile</a>
+                    <a href="editProfile" class="profile-option">Edit Profile</a>
                     <a href="setting" class="profile-option">Settings</a>
                     <a href="logout" class="profile-option">Log Out</a>
                 </div>
