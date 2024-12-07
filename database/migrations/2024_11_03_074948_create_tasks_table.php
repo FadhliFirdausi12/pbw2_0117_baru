@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tasks', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('title', 255);
-            $table->text('note')->nullable();
-            $table->dateTime('end_date');
-            $table->timestamp('created_at')->nullable()->useCurrent();
-            $table->timestamp('updated_at')->nullable()->useCurrent()->useCurrentOnUpdate();
-            $table->timestamp('deleted_at')->nullable();
-        });
+        if (!Schema::hasTable('tasks')) {
+            Schema::create('tasks', function (Blueprint $table) {
+                $table->id();
+                $table->string('title');
+                $table->text('note')->nullable();
+                $table->dateTime('end_date');
+                $table->timestamps();
+                $table->softDeletes();
+            });
+        }
     }
 
     /**
