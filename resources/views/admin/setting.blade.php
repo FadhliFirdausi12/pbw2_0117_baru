@@ -34,17 +34,17 @@
                                     <div class="form-group">
                                         <label class="form-label">Username</label>
                                         <input type="text" class="form-control mb-1" name="username"
-                                            value="<?php echo $user['username']; ?>">
+                                        value="{{ $user->username }}">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Name</label>
-                                        <input type="text" class="form-control" name="name"
-                                            value="<?php echo $user['name']; ?>">
+                                        <input type="text" class="form-control" name="name" 
+                                        value="{{ $user->name }}">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Email</label>
                                         <input type="text" class="form-control mb-1" name="email"
-                                            value="<?php echo $user['email']; ?>">
+                                        value="{{ $user->email }}">
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label">Current password</label>
@@ -89,6 +89,12 @@
         <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
         <script type="text/javascript"></script>
+        @if(isset($user))
+    <input type="text" class="form-control mb-1" name="username" value="{{ $user->username }}">
+@else
+    <p>User not found.</p>
+@endif
+
     </div>
 </body>
 

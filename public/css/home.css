@@ -74,7 +74,7 @@ a:hover {
 }
 
 .gambar-opening {
-    width: 40%;
+    width: 35%;
     margin-left: 58%;
     margin-top: 5%;
 }
@@ -98,53 +98,48 @@ a:hover {
     font-size: 170%;
 }
 
-.fitur {
-    padding-bottom: 0%;
-}
 
-.fitur-task {
+
+.fitur-task,.fitur-calender {
+    display: inline-block;
     background-color: #e3aeae;
     width: 15%;
     border-radius: 10%;
+    cursor: pointer;
     margin-left: 25%;
     margin-top: 10%;
     padding: 1%;
+    transition: transform 0.3s ease;
 }
 
 .fitur-task:hover {
     box-shadow: 0 0 10px #1b0e4d;
 }
 
-.logo-task {
+.logo-task{
     width: 30%;
     margin-left: 35%;
 }
+.logo-calender {
+    width: 38.5%;
+    margin-left: 33%;
+}
 
-.my-task {
+
+.my-task,.task-calender {
     color: #1b0e4d;
     text-align: center;
     font-size: 120%;
 }
 
-.fitur-calender {
-    background-color: #e3aeae;
-    width: 15%;
-    border-radius: 10%;
-    margin-left: 60%;
-    margin-top: -16.8%;
-    padding: 1%;
-}
+
 
 .fitur-calender:hover {
     box-shadow: 0 0 10px #1b0e4d;
 }
 
-.logo-calender {
-    width: 30%;
-    margin-left: 35%;
-}
 
-.task-calender {
+.my-task,.task-calender {
     color: #1b0e4d;
     text-align: center;
     font-size: 120%;

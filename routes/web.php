@@ -2,9 +2,33 @@
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/setting', [AdminController::class, 'setting'])->name('admin.setting');
+});
 
 
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('event/list', [EventController::class, 'listEvent'])->name('event.list');
+Route::resource('event', EventController::class);
 Route::get('/', function () {
     return view('landingPage');
 });

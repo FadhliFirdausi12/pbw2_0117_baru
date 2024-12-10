@@ -17,7 +17,7 @@
             <li class="profile-menu">
                 <img class="logo-profile" src="./images2/profile-logo.png" alt="Profile Photo" id="profile-photo">
                 <div class="profile-options" id="profile-options">
-                    <a href="editProfile" class="profile-option">Edit Profile</a>
+                    <a href="/profile/edit" class="profile-option">Edit Profile</a>
                     <a href="setting" class="profile-option">Settings</a>
                     <a href="logout" class="profile-option">Log Out</a>
                 </div>
@@ -32,20 +32,23 @@
         <p class="deskripsi">We will help you organize your to-do list.</p>
     </div>
 
-    <div class="fitur">
-        <a href="mytask">
+    
+   
+         <a href="mytask">
             <div class="fitur-task">
                 <img class="logo-task" src="./images2/logo-task.png" alt="">
                 <h3 class="my-task">MY <br>TASK</h3>
             </div>
         </a>
 
-        <a href="calendar.html">
-            <div class="fitur-calender">
-                <img class="logo-calender" src="./images2/logo-calender.png" alt="">
-                <h3 class="task-calender">TASK <br>CALENDAR</h3>
-            </div>
-        </a>
+        <a href="event">
+    <div class="fitur-calender" >
+        <img class="logo-calender" src="./images2/logo-calender.png" alt="">
+        <h3 class="task-calender">TASK <br>CALENDAR</h3>
+    </div>
+</a>
+
+
 
         <div class="foto-line">
             <img class="garis" src="./images2/Line-2.png" alt="">

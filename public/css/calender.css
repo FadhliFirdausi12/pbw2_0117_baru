@@ -1,0 +1,112 @@
+/* Styling for the BACK text bar */
+.teks-bar {
+    background-color: #B22222; /* Red background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid #B22222; 
+    font-family: verdana;/* Darker red border */
+  }
+  
+  .teks-bar a {
+    text-decoration: none;
+    justify-content: space-between;
+    color: white;
+    transition: color 0.3s ease;
+  }
+  
+  .teks-bar a:hover {
+    color: #ffe5e5; /* Light red on hover */
+  }
+  
+  /* BACK button image */
+  
+  .gambar-back:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+  }
+  
+  /* FullCalendar container */
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
+    border: 2px solid #B22222; /* Red border */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #fff; /* White background */
+    overflow: hidden;
+    font-family: verdana;
+  }
+  
+  /* FullCalendar toolbar (header) */
+  .fc-toolbar {
+    background-color: #B22222; /* Red background */
+    color: white; /* White text */
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 2px solid #B22222; /* Darker red border */
+  }
+  
+  /* Navigation button styling */
+  .fc-toolbar .fc-button {
+    background-color: #ffe5e5; /* Light red background */
+    color: #ff4d4d; /* Red text */
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .fc-toolbar .fc-button:hover {
+    background-color: #ff4d4d; /* Red on hover */
+    color: white; /* White text on hover */
+  }
+  
+  /* Calendar day grid styling */
+  .fc-daygrid-day {
+    border: 1px solid #ffe5e5; /* Light red borders */
+    background-color: #f9f9f9; /* Light grey background for days */
+  }
+  
+  .fc-daygrid-day-number {
+    color: #ff4d4d; /* Red date numbers */
+    font-weight: bold;
+  }
+  
+  /* Today highlight */
+  .fc-day-today {
+    background-color: #ffcccc; /* Highlight today with light red */
+    border: 2px solid #ff4d4d; /* Bold red border for today */
+  }
+  
+  /* Event styling */
+  .fc-event {
+    background-color: #ff4d4d; /* Red event background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Event shadow */
+    transition: transform 0.2s ease;
+  }
+  
+  .fc-event:hover {
+    transform: scale(1.05); /* Zoom on hover */
+    cursor: pointer;
+  }
+  
+  /* Footer link hover effect */
+  a {
+    text-decoration: none;
+    color: #ff4d4d; /* Red text */
+  }
+  
+  a:hover {
+    color: #ff0000; /* Darker red on hover */
+    
+  }
+  
