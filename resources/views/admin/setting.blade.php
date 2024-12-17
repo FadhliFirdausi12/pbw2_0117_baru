@@ -20,6 +20,7 @@
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-change-password">Change password</a>
                         <form action="account_settings.php" method="POST">
+                        @csrf
                             <button type="submit" name="logout" class="list-group-item list-group-item-action">Log
                                 Out</button>
                         </form>
@@ -30,12 +31,8 @@
                         <div class="tab-pane fade active show" id="account-general">
                             <hr class="border-light m-0">
                             <div class="card-body">
-                                <form action="account_settings.php" method="POST">
-                                    <div class="form-group">
-                                        <label class="form-label">Username</label>
-                                        <input type="text" class="form-control mb-1" name="username"
-                                        value="{{ $user->username }}">
-                                    </div>
+                                <form action="{{ route('admin.update-settings') }}" method="POST">
+                                    @csrf
                                     <div class="form-group">
                                         <label class="form-label">Name</label>
                                         <input type="text" class="form-control" name="name" 
@@ -76,10 +73,6 @@
                                     <input type="password" class="form-control">
                                 </div>
                             </div>
-                        </div>
-                        <div class="text-right mt-3">
-                            <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
-                            <button type="button" class="btn btn-default">Cancel</button>
                         </div>
                     </div>
                 </div>

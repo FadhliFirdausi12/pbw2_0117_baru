@@ -5,11 +5,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TaskController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/setting', [AdminController::class, 'setting'])->name('admin.setting');
+    Route::middleware('auth')->post('/admin/update-settings', [AdminController::class, 'updateSettings'])->name('admin.update-settings');
 });
-
 
 
 /*
@@ -22,6 +23,11 @@ Route::middleware(['auth'])->group(function () {
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::resource('tasks', TaskController::class);
+    Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+});
 
 Route::get('/', function () {
     return view('welcome');
