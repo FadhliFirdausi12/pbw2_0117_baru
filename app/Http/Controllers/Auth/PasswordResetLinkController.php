@@ -12,33 +12,43 @@ class PasswordResetLinkController extends Controller
 {
     /**
      * Display the password reset link request view.
+     *
+     * @return View
      */
     public function create(): View
     {
+        // Menampilkan halaman untuk meminta reset password
         return view('auth.forgot-password');
     }
 
     /**
      * Handle an incoming password reset link request.
      *
+     * @param  Request  $request
+     * @return RedirectResponse
+     *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        $request->validate([
+        // Validasi email yang diterima
+        $validated = $request->validate([
             'email' => ['required', 'email'],
         ]);
 
-        // We will send the password reset link to this user. Once we have attempted
-        // to send the link, we will examine the response then see the message we
-        // need to show to the user. Finally, we'll send out a proper response.
+        // Kirim link reset password ke email yang valid
         $status = Password::sendResetLink(
-            $request->only('email')
+            $validated
         );
 
-        return $status == Password::RESET_LINK_SENT
-                    ? back()->with('status', __($status))
-                    : back()->withInput($request->only('email'))
-                        ->withErrors(['email' => __($status)]);
+        // Tampilkan pesan berdasarkan hasil pengiriman link
+        if ($status == Password::RESET_LINK_SENT) {
+            return back()->with('status', __($status));
+        }
+
+        // Jika gagal, kembalikan ke halaman sebelumnya dengan pesan error
+        return back()
+            ->withInput($request->only('email'))
+            ->withErrors(['email' => __($status)]);
     }
 }

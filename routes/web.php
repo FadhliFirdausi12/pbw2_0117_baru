@@ -5,6 +5,13 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use Illuminate\Support\Facades\Password;
+use App\Http\Controllers\Auth\PasswordResetLinkController;
+
+Route::post('/auth/forgot-password', [PasswordResetLinkController::class, 'store'])->name('password.email');
+
+
+
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/setting', [AdminController::class, 'setting'])->name('admin.setting');

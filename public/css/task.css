@@ -53,7 +53,7 @@ a {
 .fitur {
     margin-top: 250px;
     text-align: center;
-    margin-left: 450px;
+    margin-left: 500px;
 }
 
 form {
@@ -71,6 +71,7 @@ form {
     border: 1px solid #1B0E4D;
     color: #1B0E4D;
     border-radius: 10px;
+    margin-left: 5%;
 }
 
 input[type="file"]::file-selector-button {
@@ -129,6 +130,7 @@ input[type="file"]::file-selector-button {
         display: none; 
     }
 }
+
 
 @media (max-width: 480px) {
     .teks {

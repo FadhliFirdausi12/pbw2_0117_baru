@@ -29,7 +29,7 @@
             <input type="date" name="" id="" placeholder="" style="font-size: 30px">
             <div style="display: flex;" >
                 <input type="text" name="" id="" placeholder="Add photo" style="font-size: 30px" readonly> 
-                <button style="width: 80px; background-color: #701414; border: none; border-radius: 10px; margin: 10px" ><img src="./images2/imade.png" alt="" style="height: 50px; width: 50px;"></button>
+                <button style="width: 80px; background-color: #701414; border: none; border-radius: 10px; margin: 20px" ><img src="./images2/imade.png" alt="" style="height: 50px; width: 50px;"></button>
             </div>
             {{-- <input type="file"> --}}
         </form>
