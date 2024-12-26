@@ -20,12 +20,11 @@ class RoleMiddleware
 
      public function handle(Request $request, Closure $next, $role)
      {
-        dd('RoleMiddleware called'); 
-
-         if (Auth::check() && Auth::user()->role == $role) {
-             return $next($request);
+         // Cek apakah user punya role yang sesuai
+         if (!$request->user() || !$request->user()->hasRole($role)) {
+             abort(403, 'Unauthorized');
          }
  
-         return redirect()->route('home')->with('error', 'You do not have access to this page.');
+         return $next($request);
      }
-}
+ }

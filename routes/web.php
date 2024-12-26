@@ -8,10 +8,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TaskController;
 
 
+
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/setting', [AdminController::class, 'setting'])->name('admin.setting');
-    Route::middleware('auth')->post('/admin/update-settings', [AdminController::class, 'updateSettings'])->name('admin.update-settings');
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    
+    
 });
+
 
 
 /*
