@@ -112,3 +112,8 @@ hr {
   border: 1px solid #b30000;
   border-radius: 5px;
 }
+.a profile-option{
+  background-color: #b30000;
+  border: none;
+  color: #fff;
+}

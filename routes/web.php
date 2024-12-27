@@ -10,11 +10,14 @@ use App\Http\Controllers\TaskController;
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-    
-    
+    // Rute untuk menampilkan form edit profil
+    Route::get('/admin/editProfile', [ProfileController::class, 'editProfile'])->name('admin.editProfile');
+
+    // Rute untuk mengupdate profil
+    Route::post('/admin/update-profile', [ProfileController::class, 'updateProfile'])->name('admin.update-profile');
+    Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 });
+
 
 
 
