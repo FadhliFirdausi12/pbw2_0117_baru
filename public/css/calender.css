@@ -1,112 +1,206 @@
 /* Styling for the BACK text bar */
 .teks-bar {
-    background-color: #B22222; /* Red background */
-    color: white; /* White text */
-    padding: 10px 20px;
-    text-align: left;
-    font-size: 18px;
-    font-weight: bold;
-    border-bottom: 3px solid #B22222; 
-    font-family: verdana;/* Darker red border */
+  background-color: #C0392B; /* Merah gelap */
+  color: white; /* Teks putih */
+  padding: 10px 20px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Arial", sans-serif; /* Font modern */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+  margin-bottom: 10px;
+}
+
+.teks-bar a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.teks-bar a:hover {
+  color: #FADBD8; /* Merah muda lembut */
+}
+
+/* FullCalendar container */
+#calendar {
+  max-width: 900px;
+  margin: 40px auto;
+  border: 2px solid #E74C3C; /* Merah terang */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+  background-color: #FFFFFF; /* Putih untuk kontras */
+  font-family: "Arial", sans-serif; /* Font modern */
+  padding: 10px;
+}
+
+/* FullCalendar toolbar (header) */
+.fc-toolbar {
+  background-color: #C0392B; /* Merah gelap */
+  color: white; /* Teks putih */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+/* Navigation button styling */
+.fc-toolbar .fc-button {
+  background-color: #FADBD8; /* Merah muda */
+  color: #C0392B; /* Merah gelap */
+  border: none;
+  padding: 8px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fc-toolbar .fc-button:hover {
+  background-color: #C0392B; /* Merah gelap */
+  color: white; /* Teks putih */
+}
+
+/* Calendar day grid styling */
+.fc-daygrid-day {
+  border: 1px solid #F5B7B1; /* Merah muda lembut */
+  background-color: #FDEDEC; /* Latar merah muda sangat lembut */
+}
+
+.fc-daygrid-day-number {
+  color: #C0392B; /* Merah gelap */
+  font-weight: bold;
+}
+
+/* Today highlight */
+.fc-day-today {
+  background-color: #F9EBEA; /* Latar merah muda lembut */
+  border: 2px solid #C0392B; /* Border merah gelap */
+}
+
+/* Event styling */
+.fc-event {
+  background-color: #C0392B; /* Merah gelap */
+  border: none; /* No border */
+  color: white; /* Teks putih */
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+  transition: transform 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: scale(1.05); /* Zoom on hover */
+  cursor: pointer;
+}
+
+/* Modal overlay */
+#modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Transparansi hitam */
+  z-index: 999; /* Pastikan overlay ada di atas */
+}
+
+/* Modal container */
+#event-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  background: #FFFFFF; /* Putih untuk kontras */
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow lembut */
+  z-index: 1000; /* Modal di atas overlay */
+  padding: 20px;
+  font-family: "Arial", sans-serif; /* Font modern */
+  color: #2C3E50; /* Warna teks utama */
+}
+
+/* Judul modal */
+#event-modal h3 {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  color: #C0392B; /* Merah gelap */
+  text-align: center;
+}
+
+/* Label */
+#event-modal label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #2C3E50; /* Warna teks utama */
+}
+
+/* Input untuk judul, tanggal, dan waktu */
+#event-modal input {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd; /* Border abu-abu terang */
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#event-modal input:focus {
+  border-color: #C0392B; /* Border merah gelap saat fokus */
+  outline: none; /* Hapus outline bawaan */
+}
+
+/* Tombol */
+#event-modal button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tombol Simpan */
+#save-event {
+  background-color: #C0392B; /* Warna utama */
+  color: #FFFFFF; /* Teks putih */
+}
+
+#save-event:hover {
+  background-color: #A93226; /* Merah lebih gelap saat hover */
+}
+
+/* Tombol Hapus */
+#delete-event {
+  background-color: #E74C3C; /* Merah terang untuk hapus */
+  color: #FFFFFF; /* Teks putih */
+}
+
+#delete-event:hover {
+  background-color: #C0392B; /* Merah gelap */
+}
+
+/* Tombol Batal */
+#close-modal {
+  background-color: #BDC3C7; /* Abu-abu untuk batal */
+  color: #2C3E50; /* Teks warna utama */
+}
+
+#close-modal:hover {
+  background-color: #95A5A6; /* Abu-abu lebih gelap */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 480px) {
+  #event-modal {
+      width: 90%; /* Lebar modal disesuaikan */
   }
-  
-  .teks-bar a {
-    text-decoration: none;
-    justify-content: space-between;
-    color: white;
-    transition: color 0.3s ease;
-  }
-  
-  .teks-bar a:hover {
-    color: #ffe5e5; /* Light red on hover */
-  }
-  
-  /* BACK button image */
-  
-  .gambar-back:hover {
-    transform: scale(1.2); /* Zoom effect on hover */
-  }
-  
-  /* FullCalendar container */
-  #calendar {
-    max-width: 900px;
-    margin: 40px auto;
-    border: 2px solid #B22222; /* Red border */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    background-color: #fff; /* White background */
-    overflow: hidden;
-    font-family: verdana;
-  }
-  
-  /* FullCalendar toolbar (header) */
-  .fc-toolbar {
-    background-color: #B22222; /* Red background */
-    color: white; /* White text */
-    padding: 15px;
-    font-size: 16px;
-    font-weight: bold;
-    border-bottom: 2px solid #B22222; /* Darker red border */
-  }
-  
-  /* Navigation button styling */
-  .fc-toolbar .fc-button {
-    background-color: #ffe5e5; /* Light red background */
-    color: #ff4d4d; /* Red text */
-    border: none;
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .fc-toolbar .fc-button:hover {
-    background-color: #ff4d4d; /* Red on hover */
-    color: white; /* White text on hover */
-  }
-  
-  /* Calendar day grid styling */
-  .fc-daygrid-day {
-    border: 1px solid #ffe5e5; /* Light red borders */
-    background-color: #f9f9f9; /* Light grey background for days */
-  }
-  
-  .fc-daygrid-day-number {
-    color: #ff4d4d; /* Red date numbers */
-    font-weight: bold;
-  }
-  
-  /* Today highlight */
-  .fc-day-today {
-    background-color: #ffcccc; /* Highlight today with light red */
-    border: 2px solid #ff4d4d; /* Bold red border for today */
-  }
-  
-  /* Event styling */
-  .fc-event {
-    background-color: #ff4d4d; /* Red event background */
-    border: none; /* No border */
-    color: white; /* White text */
-    padding: 5px 10px;
-    font-size: 14px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Event shadow */
-    transition: transform 0.2s ease;
-  }
-  
-  .fc-event:hover {
-    transform: scale(1.05); /* Zoom on hover */
-    cursor: pointer;
-  }
-  
-  /* Footer link hover effect */
-  a {
-    text-decoration: none;
-    color: #ff4d4d; /* Red text */
-  }
-  
-  a:hover {
-    color: #ff0000; /* Darker red on hover */
-    
-  }
-  
+}
