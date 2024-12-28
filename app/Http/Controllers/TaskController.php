@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\task;
+use App\Models\Task;
+use App\Models\List;
 use App\Http\Requests\StoretaskRequest;
 use App\Http\Requests\UpdatetaskRequest;
+use Illuminate\Http\Request;
+
 
 class TaskController extends Controller
 {
@@ -14,10 +17,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        \Log::info('User authenticated: ' . auth()->check());
-        $this->authorize('view-tasks');
         $tasks = Task::all();
-        return view('tasks.index', compact('tasks'));
+        return view('admin.list', compact('tasks'));
     }
 
     /**
@@ -25,7 +26,7 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.task');
     }
 
     /**
@@ -33,11 +34,6 @@ class TaskController extends Controller
      */
     public function store(StoretaskRequest $request)
     {
-
-        \Log::info('CSRF Token: ' . $request->header('X-CSRF-TOKEN'));
-        \Log::info('CSRF Token from input: ' . $request->_token);
-
-        dd(Auth::user()->role);
     
         $request->validate([
             'title' => 'required|string|max:255',
@@ -66,7 +62,10 @@ class TaskController extends Controller
      */
     public function show(task $task)
     {
-        //
+        $tasks = Task::all();
+
+        // Arahkan ke view admin.list dengan task yang di-highlight
+        return view('admin.list', ['tasks' => $tasks, 'highlightedTask' => $task]);
     }
 
     /**
@@ -74,7 +73,9 @@ class TaskController extends Controller
      */
     public function edit(task $task)
     {
-        //
+
+        // Arahkan ke view admin.list dengan task yang sedang diedit
+        return view('admin.edit', compact('task'));
     }
 
     /**
@@ -92,12 +93,31 @@ class TaskController extends Controller
     return redirect()->route('admin.setting')->with('success', 'Settings updated successfully!');
     }
 
+    public function update(Request $request, Task $task)
+    {
+        // Validasi input
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'notes' => 'nullable|string',
+            'end_date' => 'nullable|date',
+        ]);
+
+        // Update task di database
+        $task->update($request->only(['title', 'notes', 'end_date']));
+
+        // Redirect ke view admin.list dengan pesan sukses
+        return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
+    }
+
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(task $task)
     {
-        //
+        $task->delete();
+
+        // Redirect ke view admin.list dengan pesan sukses
+        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
     }
 
 }

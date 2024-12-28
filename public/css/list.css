@@ -123,15 +123,20 @@ a{
 }
 
 footer {
-    margin-top: 8px;
     color: #7e1c1a;
-    display: flex;
-    justify-content: flex-end; 
-    padding-right: 10%; 
 }
 
-footer h1 {
-    margin: 0;
+.gambar-plus {
+    width: 105px; 
+    height: 102spx;
+    background-color: #E3AEAE; 
+    border-radius: 50%; 
+    position: fixed; 
+    bottom: 40px; 
+    right: 40px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 768px) {

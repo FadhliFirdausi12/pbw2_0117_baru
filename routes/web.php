@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Middleware\RoleMiddleware;
 
 Route::get('/test-email', function () {
     Mail::raw('This is a test email!', function ($message) {
@@ -26,8 +27,8 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function () {
-    Route::resource('tasks', TaskController::class);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
     Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
 });
 
@@ -56,22 +57,22 @@ Route::get('/admin', function () {
     return view('admin/dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/task', [TaskController::class, 'index'])->name('task');
-
 Route::get('/mytask', function () {
     return view('admin/mytask');
 });
 
-Route::get('/task', function () {
-    return view('admin/task');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 });
+
 
 Route::get('/list', function () {
     return view('admin/list');
 });
 
-Route::get('/edit', function () {
-    return view('admin/edit');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+    Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
 });
 
 Route::get('/Forgot your password?', function () {
@@ -87,5 +88,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/admin/redirect-tasks', [AdminController::class, 'redirectBasedOnTasks'])->name('redirect.tasks');
 
 require __DIR__.'/auth.php';

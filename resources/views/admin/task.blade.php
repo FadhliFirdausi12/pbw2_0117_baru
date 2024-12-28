@@ -29,14 +29,7 @@
             <input type="text" name="title" id="title" placeholder="Task Tittle" style="font-size: 30px"> 
             <input type="text" name="notes" id="notes" placeholder="Notes" style="font-size: 30px">
             <input type="date" name="end_date" id="end_date" style="font-size: 30px">
-            <div style="display: flex;" >
-
-              
-                <input type="file" name="photo" id="photo" placeholder="Add photo" style="font-size: 30px" readonly> 
-                <button type="button" style="width: 80px; background-color: #701414; border: none; border-radius: 10px; margin: 10px" ><img src="./images2/imade.png" alt="" style="height: 50px; width: 50px;"></button>
-
-            </div>
-           <!-- {{-- <input type="file"> --}} -->
+            <input type="file" name="photo" id="photo" placeholder="Add photo" style="font-size: 30px" readonly> 
 
             <div class="ceklis lef" id="submit-task">
                 <button type="submit">
@@ -49,32 +42,10 @@
 
 
     <script>
-    document.getElementById('submit-task').addEventListener('click', function() {
-        document.getElementById('task-form').submit(); // Trigger submit form
-    });
 
     document.getElementById('photo').addEventListener('change', function() {
         var fileName = this.files[0] ? this.files[0].name : '';
         document.getElementById('file-name').value = fileName; 
-    });
-
-    // Set CSRF token di header semua request AJAX
-    document.addEventListener("DOMContentLoaded", function () {
-        let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-        fetch('/tasks', {
-            method: 'POST',
-            headers: {
-                'X-CSRF-TOKEN': token,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                title: 'Test Task',
-                notes: 'Some notes',
-                end_date: '2024-01-01'
-            })
-        }).then(response => {
-            console.log(response);
-        }).catch(err => console.log(err));
     });
 
     </script>

@@ -33,7 +33,7 @@
 
     
    
-         <a href="mytask">
+         <a href="{{ route('redirect.tasks') }}"">
             <div class="fitur-task">
                 <img class="logo-task" src="./images2/logo-task.png" alt="">
                 <h3 class="my-task">MY <br>TASK</h3>

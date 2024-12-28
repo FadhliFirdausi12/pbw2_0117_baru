@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Task</title>
-    <link rel="stylesheet" href="css/mytask.css">
+    <link rel="stylesheet" href="{{ asset('css/mytask.css') }}">
 </head>
 
 <body>
@@ -19,10 +19,10 @@
     
     <div class="box-task">
         <img class="gambar-note" src="./images2/foto-notes.png" alt="">
-        <a href="task"><img class="gambar-plus" src="./images2/foto-plus.png" alt=""></a>
+        <a href="{{ route('tasks.create') }}"><img class="gambar-plus" src="./images2/foto-plus.png" alt=""></a>
         <div id="my-task" class="task">
             <h3 class="note-text-1">Let's <br> Get Started.</h3>
-        <a href="task"><p class="deskripsi-plus">New List</p></a>
+        <a href="{{ route('tasks.create') }}"><p class="deskripsi-plus">New List</p></a>
         </div>
     </div>
 </body>
