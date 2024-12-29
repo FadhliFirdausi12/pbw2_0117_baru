@@ -64,22 +64,22 @@ a {
 
 .fitur {
     margin-top: 150px;
-    margin-left: auto; /* Untuk memusatkan elemen */
-    margin-right: auto; /* Untuk memusatkan elemen */
-    width: 50%; /* Mengatur lebar fitur agar tidak terlalu lebar */
+    margin-left: auto;
+    margin-right: auto; 
+    width: 50%;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Memusatkan form input */
+    align-items: center; 
 }
 
 .fitur input {
     color: 1px solid black;
     margin-top: 23px;
     text-align: center;
-    width: 100%; /* Menggunakan 100% untuk responsivitas */
+    width: 100%; 
     height: 70px;
     background-color: #E3AEAE;
     border: 3px solid #701414;
@@ -87,10 +87,10 @@ form {
     border-radius: 10px;
 }
 
-textarea.isi {
+textarea {
     color: 1px solid black;
     margin-top: 23px;
-    width: 100%; /* Menggunakan 100% untuk responsivitas */
+    width: 100%;
     height: 400px;
     background-color: #E3AEAE;
     border: 3px solid #701414;

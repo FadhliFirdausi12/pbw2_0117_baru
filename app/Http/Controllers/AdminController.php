@@ -15,7 +15,6 @@ class AdminController extends Controller
      */
     public function homepage()
     {
-        // Anda dapat menambahkan logika tambahan di sini jika diperlukan
         return view('admin.dashboard');
     }
 
@@ -24,9 +23,9 @@ class AdminController extends Controller
         $tasks = Task::all();
 
         if ($tasks->isEmpty()) {
-            return view('admin.mytask'); // Jika belum ada data
+            return view('admin.mytask');
         }
 
-        return view('admin.list', compact('tasks')); // Jika ada data
+        return view('admin.list', compact('tasks'));
     }
 }

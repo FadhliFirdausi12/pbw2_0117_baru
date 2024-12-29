@@ -12,7 +12,12 @@ body{
     width: 8%;
     margin-left: 69.7%;
     margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    margin-top: -5%;
+    color: #49494d;
 }
+
 .teks{
     margin-top: -6%;
 }
@@ -22,11 +27,7 @@ a{
 .back{
     margin-top: 8%;
 }
-/* .foto-back{
-    width: 1%;
-    margin-bottom: 5px;
-    margin-left: 6%;
-} */
+
 .teks-back{
     color: #7e1c1a;
     margin-left: 10%;
@@ -36,19 +37,13 @@ a{
     color: rgb(121, 42, 42);
 }
 
-.search {
-    display: flex;
-    justify-content: center;
-    margin-top: -5%;
-    color: #49494d;
-}
-
 .search form {
     display: flex;
     align-items: left;
     border-radius: 25px;
     padding: 5%;
     padding-left: 120%;
+    background: none;
 }
 
 .search input[type="text"] {
@@ -66,19 +61,38 @@ a{
 }
 
 .search button {
-    background-color: #1B0E4D;
-    color: white;
-    border: none;
-    border-radius: 0 10% 10% 0;
-    cursor: pointer;
+    background: none;
+    border: none; 
+    outline: none; 
+    box-shadow: none;
+    padding: 0;
+    margin-left: 3px;
+    padding-inline: 0px;
+    display: block;
 }
 
-.search button:hover {
-    background-color: white;
+.search img {
+    background-color: #7e1c1a;
+    width: 75px;
+    height: 75px;
+    border-radius: 20%;
+    outline: none; 
+    border: none;
+    display: block;
 }
-.logo-search{
-    width: 60%;
+
+.search img:hover {
+    background-color: #E3AEAE;
 }
+
+.no-results{
+    font-style:inherit;
+    color: gray;
+    text-align: center;
+    font-size: 50px;
+    margin-top: 10%;
+}
+
 .notes1{
     background-color: #E3AEAE;
     padding: 0.2%;
@@ -88,6 +102,7 @@ a{
     margin-left: 10%;
     border: 3px solid #7e1c1a;
     border-radius: 10px;
+    position: relative;
 }
 .judul-notes{
     margin-left: 3%;
@@ -96,14 +111,15 @@ a{
 .desc-notes{
     margin-left: 3%;
     color: rgb(84, 84, 84);
-    font-size: 28px;
+    font-size: 18px;
     margin-top: -1.5%;
 }
 .text-notes{
-    color:  rgb(84, 84, 84);
-    margin-left: 6%;
-    margin-bottom:-2.5%;
+    color:  black;
+    margin-left: 3%;
+    margin-top:-0.5%;
     display: block;
+    font-size: 22px
 }
 .logo-notes{
     margin-left: 3%;
@@ -111,25 +127,107 @@ a{
     margin-top: -2.2%;
     width: 3%;
 }
-.hapus{
-    margin-left: 85%;
-    margin-top: -5%;
-    color: #1B0E4D;
-}
-.edit{
-    color: #1B0E4D;
-    margin-left: 85%;
-    margin-top: -5.5%;
+
+.menu-container {
+    position: absolute; 
+    top: 30%; 
+    right: 2%; 
+    display: flex;
+    align-items: center;
 }
 
-footer {
-    color: #7e1c1a;
+/* Gambar view */
+.view {
+    width: 70px;
+    height: 68px;
+    position: absolute;
+    top: 30%; 
+    left: 90%; 
+}
+
+.view:hover {
+    transform: scale(1.1); 
+    filter: brightness(1.2); 
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #fff;
+    border: 2px solid #7e1c1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.dropdown a {
+    display: block;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #333;
+    font-size: 23px;
+    font-family: verdana;
+}
+
+.dropdown button {
+    display: block;
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #ff0000;
+    font-size: 23px;
+    font-family: verdana;
+    background: none;
+    border: none;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.dropdown button:hover {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+
+.menu-button:hover{
+    transform: scale(1.1);
+}
+
+.menu-container:hover .dropdown {
+    display: block;
+}
+
+.photo{
+    margin-left: 3%;
+}
+
+.photo-icon{
+    width: 50px; 
+    height: 53px;
+    margin-top: -4%;
+    margin-bottom: -2%;
+    margin-left: -0.5%;
+}
+
+span {
+    justify-content: center;
 }
 
 .gambar-plus {
-    width: 105px; 
-    height: 102spx;
-    background-color: #E3AEAE; 
+    width: 100px; 
+    height: 90px;
+    background-color:#E3AEAE; 
     border-radius: 50%; 
     position: fixed; 
     bottom: 40px; 
@@ -137,6 +235,7 @@ footer {
     display: flex; 
     justify-content: center;
     align-items: center;
+    background-size: cover;
 }
 
 @media (max-width: 768px) {

@@ -20,8 +20,6 @@ class RoleMiddleware
 
      public function handle(Request $request, Closure $next, $role)
      {
-        \Log::info('Role Middleware Called. Required Role: ' . $role);
-        \Log::info('User Role: ' . optional($request->user())->role);
 
         if (!$request->user() || $request->user()->role !== $role) {
             \Log::error('Unauthorized access. User role: ' . optional($request->user())->role);

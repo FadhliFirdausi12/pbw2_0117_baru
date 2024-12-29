@@ -30,7 +30,13 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
     Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+    Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
+    Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+    Route::get('/admin/list', [TaskController::class, 'index'])->name('tasks.list');
+    
 });
+
+Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
 Route::get('/', function () {
     return view('welcome');
@@ -58,22 +64,15 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/mytask', function () {
-    return view('admin/mytask');
-});
+    return view('admin.mytask');
+})->name('mytask');
+
+Route::get('/tasks/{task}', [TaskController::class, 'show'])->name('tasks.show');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
 });
 
-
-Route::get('/list', function () {
-    return view('admin/list');
-});
-
-Route::middleware(['auth'])->group(function () {
-    Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
-    Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
-});
 
 Route::get('/Forgot your password?', function () {
     return view('resetPw');

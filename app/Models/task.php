@@ -13,10 +13,10 @@ class Task extends Model
     protected $fillable = [
         'title',      
         'note',    
-        'end_date',    
+        'created_at',    
         'photo',       
     ];
 
-    protected $dates = ['end_date', 'deleted_at'];
+    protected $dates = ['created_at', 'deleted_at'];
 }
 

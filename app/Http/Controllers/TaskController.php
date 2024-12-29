@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use App\Models\List;
+use App\Models\Edit;
+use App\Models\Showtask;
 use App\Http\Requests\StoretaskRequest;
 use App\Http\Requests\UpdatetaskRequest;
 use Illuminate\Http\Request;
@@ -15,9 +17,17 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $tasks = Task::all();
+        $query = Task::query();
+
+        if ($request->has('search') && !empty($request->search)) {
+            $query->where('title', 'like', '%' . $request->search . '%')
+              ->orWhere('note', 'like', '%' . $request->search . '%');
+        }
+
+        $tasks = $query->get();
+
         return view('admin.list', compact('tasks'));
     }
 
@@ -26,7 +36,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view('admin.task');
+        $hasTasks = Task::exists();
+        return view('admin.task', compact('hasTasks'));
     }
 
     /**
@@ -37,20 +48,23 @@ class TaskController extends Controller
     
         $request->validate([
             'title' => 'required|string|max:255',
-            'notes' => 'nullable|string',
-            'end_date' => 'required|date',
+            'note' => 'nullable|string',
+            'created_at' => 'required|date',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $photoPath = null;
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('photos', 'public');
+            $file = $request->file('photo');
+            $photoName = $file->getClientOriginalName();
+            $photoPath = $file->storeAs('photos', $photoName, 'public');
+            $task->photo = $photoPath;
         }
 
         Task::create([
             'title' => $request->input('title'),
-            'notes' => $request->input('notes'),
-            'end_date' => $request->input('end_date'),
+            'note' => $request->input('note'),
+            'created_at' => $request->input('created_at'),
             'photo' => $photoPath,
         ]);
 
@@ -62,50 +76,44 @@ class TaskController extends Controller
      */
     public function show(task $task)
     {
-        $tasks = Task::all();
-
-        // Arahkan ke view admin.list dengan task yang di-highlight
-        return view('admin.list', ['tasks' => $tasks, 'highlightedTask' => $task]);
-    }
+        return view('admin.showtask', compact('task'));    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(task $task)
     {
-
-        // Arahkan ke view admin.list dengan task yang sedang diedit
         return view('admin.edit', compact('task'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function updateSettings(UpdatetaskRequest $request, task $task)
-    {
-        $user = auth()->user();
-        $user->update([
-        'username' => $request->username,
-        'name' => $request->name,
-        'email' => $request->email,
-        ]);
-
-    return redirect()->route('admin.setting')->with('success', 'Settings updated successfully!');
     }
 
     public function update(Request $request, Task $task)
     {
-        // Validasi input
         $request->validate([
             'title' => 'required|string|max:255',
-            'notes' => 'nullable|string',
-            'end_date' => 'nullable|date',
+            'note' => 'nullable|string',
+            'created_at' => 'required|date',
+            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Update task di database
-        $task->update($request->only(['title', 'notes', 'end_date']));
+        $task->update([
+            'title' => $request->input('title'), 
+            'note' => $request->input('note'),
+            'created_at'=> $request->input('created_at'),
+        ]);
 
-        // Redirect ke view admin.list dengan pesan sukses
+        if ($request->hasFile('photo')) {
+            if ($task->photo) {
+                \Storage::disk('public')->delete($task->photo); 
+            }
+    
+            $file = $request->file('photo');
+            $photoName = $file->getClientOriginalName();
+            $photoPath = $file->storeAs('photos', $photoName, 'public');
+            $task->photo = $photoPath;       
+        }
+
+        $task->save();
+        
         return redirect()->route('tasks.index')->with('success', 'Task updated successfully!');
     }
 
@@ -115,9 +123,7 @@ class TaskController extends Controller
     public function destroy(task $task)
     {
         $task->delete();
-
-        // Redirect ke view admin.list dengan pesan sukses
-        return redirect()->route('tasks.index')->with('success', 'Task deleted successfully!');
+        return redirect()->route('tasks.list')->with('success', 'Task deleted successfully!');
     }
 
 }

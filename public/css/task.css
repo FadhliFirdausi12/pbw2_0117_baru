@@ -61,7 +61,15 @@ form {
     flex-direction: column;
 }
 
-.fitur input {
+.time {
+    color: white;
+    font-family: 'Poppins';
+    font-size: 24px;
+    margin-right: 77%;
+    margin-bottom: -1%;
+}
+
+.fitur input, textarea {
     color: 1px solid black;
     margin-top: 23px;
     text-align: center;
@@ -74,16 +82,31 @@ form {
     margin-left: 5%;
 }
 
+textarea{
+    width: 795px;
+    height: 200px;
+}
+
 input[type="file"]::file-selector-button {
     background-color: #ffffff;
     border: 1px solid #1B0E4D;
 }
 
-.ceklis {
-    bottom: 1rem;
-    right: 1rem;
+.ceklis-lef {
+    bottom: 40px;
+    right: 40px;
     position: absolute;
+    background-color: white;
+    border-radius: 50%; 
 }
+
+button{
+    background: none;
+    border: none;
+    width: 90px;
+    height: 90px;
+}
+
 
 @media (max-width: 768px) {
     .my-task {

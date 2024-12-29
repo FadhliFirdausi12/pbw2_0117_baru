@@ -24,7 +24,7 @@ class StoretaskRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'note' => 'nullable|string',
-            'end_date' => 'required|date',
+            'created_at' => 'required|date',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
     }

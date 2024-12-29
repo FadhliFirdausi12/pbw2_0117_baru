@@ -15,10 +15,10 @@
         <h1 class="teks">TASK</h1>
     </div>
 
-    <a href="dashboard">
+    <a href="{{ $hasTasks ? route('tasks.index') : route('mytask') }}">
         <div class="back">
             {{-- <img class="back-image" src="./images2/back-2.png" alt=""> --}}
-            <a href="/mytask" class="back-text">Back</h2>
+            <a href="{{ $hasTasks ? route('tasks.index') : route('mytask') }}" class="back-text">Back</h2>
         </div>
     </a>
 
@@ -27,13 +27,15 @@
         <form action="{{ route('tasks.store') }}" method="POST" enctype="multipart/form-data" id="task-form">
             @csrf
             <input type="text" name="title" id="title" placeholder="Task Tittle" style="font-size: 30px"> 
-            <input type="text" name="notes" id="notes" placeholder="Notes" style="font-size: 30px">
-            <input type="date" name="end_date" id="end_date" style="font-size: 30px">
+            <textarea name="note" id="note" placeholder="Note" style="font-size: 30px"></textarea>
+            <br>
+            <p class="time">Time/Deadline:</p>
+            <input type="date" name="created_at" id="created_at" style="font-size: 30px">
             <input type="file" name="photo" id="photo" placeholder="Add photo" style="font-size: 30px" readonly> 
 
-            <div class="ceklis lef" id="submit-task">
-                <button type="submit">
-                <img src="./images2/check.png" alt="Submit Task">
+            <div class="ceklis-lef" id="submit-task">
+                <button type="submit" >
+                <img src="{{ asset('images2/check.png') }}" alt="Submit Task">
                 </button>
             </div>
 
