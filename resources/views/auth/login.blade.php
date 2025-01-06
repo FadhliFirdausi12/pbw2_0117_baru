@@ -63,13 +63,7 @@
                     {{ __('Log in') }} 
                 </x-primary-button>
             </div> --}}
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-white-600 dark:text-white-400 hover:text-white-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            <a class="link" href="{{ route('register') }}">{{ __('Didnt have account?') }}</a>
 
 
             </div>

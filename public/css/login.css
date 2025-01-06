@@ -22,7 +22,7 @@ body {
     color: #ffffff;
 }
 
-.forgot-password {
+.a.Link{
     font-size: 0.875rem;
     text-decoration: underline; 
     margin-right: auto; 
@@ -34,6 +34,6 @@ body {
     border-radius: 100px;
 }
 
-.forgot-password:hover {
+.a.Link:hover {
     color: #fb700c; 
 }
